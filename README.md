@@ -1,4 +1,4 @@
-# Chat-Messenger
+# Chat-Messenger using python
 This is basically a socket based chat application in python. A sought of chat room in which multiple users can connect to a chat server and send messages. The code can take upto 10 clients. Code consists of 2 python scripts one chat_server and another chat_client.
 
 # Instructions
