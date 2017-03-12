@@ -1,5 +1,5 @@
 
-import socket
+import socket                      #importing libraries
 import string
 import select
 import sys
@@ -7,7 +7,7 @@ import sys
 
 host = sys.argv[1]
 port = int(sys.argv[2])
-s = socket.socket(socket.AF_INET, socket.SOCK_STREAM)
+s = socket.socket(socket.AF_INET, socket.SOCK_STREAM)           #declaring socket variable
 
 s.settimeout(2)
 
@@ -23,7 +23,7 @@ sys.stdout.flush()
 
 while 1:
     stream=[sys.stdin,s]
-    readable,writable,err=select.select(stream,[],[])
+    readable,writable,err=select.select(stream,[],[])          #get the readable sockets
     for soc in readable:
         if soc == s:
             
