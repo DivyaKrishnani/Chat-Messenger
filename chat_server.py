@@ -1,9 +1,9 @@
 
-import socket
+import socket                                 #import libraries
 import sys
 import select
 
-def send_msg(soc,message):
+def send_msg(soc,message):                    #delivering messages to clients by taking it from host
     for socket in LIST:
         try:        
             if socket != server and socket != soc:   
@@ -16,7 +16,7 @@ def send_msg(soc,message):
 LIST =[]
 buff=4096
 port=12345
-server=socket.socket(socket.AF_INET,socket.SOCK_STREAM)
+server=socket.socket(socket.AF_INET,socket.SOCK_STREAM)         #server socket declaration
 host=socket.gethostname()
 print "host name : " 
 print host
@@ -24,7 +24,7 @@ server.setsockopt(socket.SOL_SOCKET, socket.SO_REUSEADDR, 1)
 server.bind((host,port))
 
 server.listen(10)
-LIST.append(server)
+LIST.append(server)               #adding server socket to list
 
 print "SERVER STARTED ON PORT "  +str(port)
 while 1:
